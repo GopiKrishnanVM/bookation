@@ -1,3 +1,4 @@
+import { classNames } from "@/utility/css-helper";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/outline";
 
@@ -35,9 +36,7 @@ const faqs = [
   // More questions...
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+
 
 export default function Example() {
   return (
