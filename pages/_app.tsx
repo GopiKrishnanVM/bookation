@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
-    document.title = "Writer's Paradise";
+    document.title = "Bookation";
   }, []);
   return (
     <DefaultLayoutComponent>
