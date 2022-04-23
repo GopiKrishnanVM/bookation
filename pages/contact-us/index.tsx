@@ -1,134 +1,87 @@
-import { NextPage } from "next";
-import { MailIcon, PhoneIcon } from "@heroicons/react/outline";
-import NextLink from "next/link";
-import Image from "next/image";
+/* This example requires Tailwind CSS v2.0+ */
+import {
+  NewspaperIcon,
+  PhoneIcon,
+  SupportIcon,
+} from "@heroicons/react/outline";
 
-type Props = {};
+const supportLinks = [
+  {
+    name: "Sales Support",
+    href: "#",
+    description:
+      "Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.",
+    icon: PhoneIcon,
+  },
+  {
+    name: "Technical Support",
+    href: "#",
+    description:
+      "Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.",
+    icon: SupportIcon,
+  },
+];
 
-const IndexPage: NextPage<Props> = ({}) => {
+export default function Example() {
   return (
-    <>
-      <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8">
-          <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
-            <div>
-              <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                Sales Support
-              </h2>
-              <div className="mt-3">
-                <p className="text-lg text-gray-500">
-                  Nullam risus blandit ac aliquam justo ipsum. Quam mauris
-                  volutpat massa dictumst amet. Sapien tortor lacus arcu.
-                </p>
-              </div>
-              <div className="mt-9">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <PhoneIcon
-                      className="h-6 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="ml-3 text-base text-gray-500">
-                    <p>+91 9626166481</p>
-                    <p className="mt-1">Mon-Sun 8am to 6pm PST</p>
-                  </div>
-                </div>
-                <div className="mt-6 flex">
-                  <div className="flex-shrink-0">
-                    <MailIcon
-                      className="h-6 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="ml-3 text-base text-gray-500">
-                    <NextLink href="https://mail.google.com/mail/?view=cm&source=mailto&to=thewritersparadise.official@gmail.com">
-                      <a rel="noreferrer" target="_blank">
-                        <p>thewritersparadise.official@gmail.com</p>
-                      </a>
-                    </NextLink>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="mt-12 sm:mt-16 md:mt-0">
-              <h2 className="text-2xl font-extrabold text-gray-900 sm:text-3xl">
-                Technical Support
-              </h2>
-              <div className="mt-3">
-                <p className="text-lg text-gray-500">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                  Magni, repellat error corporis doloribus similique,
-                  voluptatibus numquam quam, quae officiis facilis.
-                </p>
-              </div>
-              <div className="mt-9">
-                <div className="flex">
-                  <div className="flex-shrink-0">
-                    <PhoneIcon
-                      className="h-6 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="ml-3 text-base text-gray-500">
-                    <p>+91 9842025958</p>
-                    <p className="mt-1">Mon-Fri 8am to 6pm PST</p>
-                  </div>
-                </div>
-                <div className="mt-6 flex">
-                  <div className="flex-shrink-0">
-                    <MailIcon
-                      className="h-6 w-6 text-gray-400"
-                      aria-hidden="true"
-                    />
-                  </div>
-                  <div className="ml-3 text-base text-gray-500">
-                    <NextLink href="https://mail.google.com/mail/?view=cm&source=mailto&to=thewritersparadise.official@gmail.com">
-                      <a rel="noreferrer" target="_blank">
-                        <p>thewritersparadise.official@gmail.com</p>
-                      </a>
-                    </NextLink>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+    <div className="bg-white">
+      {/* Header */}
+      <div className="relative pb-32 bg-gray-800">
+        <div className="absolute inset-0">
+          <img
+            className="w-full h-full object-cover"
+            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
+            alt=""
+          />
+          <div
+            className="absolute inset-0 bg-gray-800 mix-blend-multiply"
+            aria-hidden="true"
+          />
+        </div>
+        <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
+          <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
+            Support
+          </h1>
+          <p className="mt-6 max-w-3xl text-xl text-gray-300">
+            Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate
+            id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
+            fames. Dui, amet, nec sit pulvinar.
+          </p>
         </div>
       </div>
-      {/* <div className="bg-white">
-        <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-          <h2 className="inline text-3xl font-extrabold tracking-tight text-gray-900 sm:block sm:text-4xl">
-            Want product news and updates?
-          </h2>
-          <p className="inline text-3xl font-extrabold tracking-tight text-indigo-600 sm:block sm:text-4xl">
-            Sign up for our newsletter.
-          </p>
-          <form className="mt-8 sm:flex">
-            <label htmlFor="email-address" className="sr-only">
-              Email address
-            </label>
-            <input
-              id="email-address"
-              name="email"
-              type="email"
-              autoComplete="email"
-              required
-              className="w-full px-5 py-3 placeholder-gray-500 focus:ring-indigo-500 focus:border-indigo-500 sm:max-w-xs border-gray-300 rounded-md"
-              placeholder="Enter your email"
-            />
-            <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
-              <button
-                type="submit"
-                className="w-full flex items-center justify-center px-5 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
-              >
-                Notify me
-              </button>
-            </div>
-          </form>
-        </div>
-      </div> */}
-    </>
-  );
-};
 
-export default IndexPage;
+      {/* Overlapping cards */}
+      <section
+        className="-mt-32 max-w-7xl mx-auto relative z-10 pb-32 px-4 sm:px-6 lg:px-8"
+        aria-labelledby="contact-heading"
+      >
+        <h2 className="sr-only" id="contact-heading">
+          Contact us
+        </h2>
+        <div className="grid grid-cols-1 gap-y-20 lg:grid-cols-2 lg:gap-y-0 lg:gap-x-8">
+          {supportLinks.map((link) => (
+            <div
+              key={link.name}
+              className="flex flex-col bg-white rounded-2xl shadow-xl"
+            >
+              <div className="flex-1 relative pt-16 px-6 pb-8 md:px-8">
+                <div className="absolute top-0 p-5 inline-block bg-indigo-600 rounded-xl shadow-lg transform -translate-y-1/2">
+                  <link.icon
+                    className="h-6 w-6 text-white"
+                    aria-hidden="true"
+                  />
+                </div>
+                <h3 className="text-xl font-medium text-gray-900">
+                  {link.name}
+                </h3>
+                <p className="mt-4 text-base text-gray-500">
+                  {link.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
+  );
+}

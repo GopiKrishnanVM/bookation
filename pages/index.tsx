@@ -14,7 +14,7 @@ import {
 
 export default function Example() {
   // useEffect(() => {
-  //   document.title = "Writer's Paradise";
+  //   document.title = "Bookation";
   // }, []);
   const [open, setOpen] = useState(false);
 
@@ -54,7 +54,7 @@ export default function Example() {
           </div>
           <div className="relative py-32">
             <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Writer&apos;s Paradise
+              Bookation
             </h1>
             {/* <div className="mt-4 sm:mt-6">
               <a
