@@ -36,14 +36,12 @@ const faqs = [
   // More questions...
 ];
 
-
-
 export default function Example() {
   return (
-    <div className="bg-indigo-700">
+    <div>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
         <div className="max-w-3xl mx-auto divide-y-2 divide-gray-200">
-          <h2 className="text-center text-3xl font-extrabold  sm:text-4xl mt-3  text-white">
+          <h2 className="text-center text-3xl font-extrabold  sm:text-4xl mt-3  text-black">
             Frequently asked questions
           </h2>
           <dl className="mt-6 space-y-6 divide-y divide-gray-200">
@@ -53,7 +51,7 @@ export default function Example() {
                   <>
                     <dt className="text-lg">
                       <Disclosure.Button className="text-left w-full flex justify-between items-start text-gray-400">
-                        <span className="font-semibold text-white">
+                        <span className="font-semibold text-black">
                           {faq.question}
                         </span>
                         <span className="ml-6 h-7 flex items-center">
@@ -68,7 +66,7 @@ export default function Example() {
                       </Disclosure.Button>
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                      <p className="mt-2 text-base text-indigo-200">
+                      <p className="mt-2 text-base hover:text-blue-600">
                         {faq.answer}
                       </p>
                     </Disclosure.Panel>

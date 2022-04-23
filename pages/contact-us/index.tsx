@@ -4,6 +4,22 @@ import {
   PhoneIcon,
   SupportIcon,
 } from "@heroicons/react/outline";
+import { people, salesTeam } from "@/static/about.data";
+import {
+  CheckCircleIcon,
+  MailIcon,
+  ChevronDownIcon,
+  PlayIcon,
+} from "@heroicons/react/solid";
+
+const callsToAction = [
+  {
+    name: "Email Us",
+    href: "https://mail.google.com/mail/u/0/?source=mailto&to=bookation.official@gmail.com&fs=1&tf=cm",
+    icon: MailIcon,
+  },
+  { name: "Contact Us ", href: "#", icon: PhoneIcon },
+];
 
 const supportLinks = [
   {
@@ -77,6 +93,49 @@ export default function Example() {
                 <p className="mt-4 text-base text-gray-500">
                   {link.description}
                 </p>
+              </div>
+              <div>
+                <ul
+                  role="list"
+                  className="flex flex-wrap justify-center gap-x-8"
+                >
+                  {salesTeam.map((person) => (
+                    <li key={person.name}>
+                      <div className="space-y-4">
+                        {/* <img
+                          className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"
+                          src={person.imageUrl}
+                          alt=""
+                        /> */}
+                        <div className="space-y-2">
+                          <div className="text-xs font-medium lg:text-sm">
+                            <h3>{person.name}</h3>
+                            <p className="text-indigo-600">{person.role}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  ))}
+                  <div className="bg-gray-50">
+                    <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                      {callsToAction.map((item) => (
+                        <div key={item.name} className="flow-root">
+                          <a
+                            href={item.href}
+                            target="_blank"
+                            className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
+                          >
+                            <item.icon
+                              className="flex-shrink-0 h-6 w-6 text-gray-400"
+                              aria-hidden="true"
+                            />
+                            <span className="ml-3">{item.name}</span>
+                          </a>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </ul>
               </div>
             </div>
           ))}

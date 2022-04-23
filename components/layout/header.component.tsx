@@ -22,22 +22,15 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
         <div className="bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="h-16 flex items-center justify-between">
-              {/* Logo (lg+) */}
-              <div className="hidden lg:flex-1 lg:flex lg:items-center">
-                <NextLink href="#">
-                  <>
-                    <span className="sr-only">Workflow</span>
-                    <Image
-                      src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
-                      alt=""
-                      width="200px"
-                      height="200px"
-                      className="h-8 w-auto"
-                    ></Image>
-                  </>
-                </NextLink>
+              <div className="flex justify-start lg:w-0 lg:flex-1">
+                <a href="/">
+                  <img
+                    className="h-8 w-auto sm:h-10"
+                    src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                    alt=""
+                  />
+                </a>
               </div>
-
               <div className="hidden h-full lg:flex">
                 {/* Flyout menus */}
                 <Popover.Group className="px-4 bottom-0 inset-x-0">
@@ -146,7 +139,6 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
                   </div>
                 </Popover.Group>
               </div>
-
               {/* Mobile menu and search (lg-) */}
               <div className="flex-1 flex items-center lg:hidden">
                 <button

@@ -1,0 +1,34 @@
+.list-bullet-items {
+  margin-left: 7rem;
+  counter-reset: section;
+  list-style-type: none;
+  position: relative;
+}
+.list-bullet-items li::before {
+  counter-increment: section;
+  content: counters(section, "");
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50px;
+  line-height: 48px;
+  position: absolute;
+  z-index: 10;
+  margin-left: -4rem;
+  display: flex;
+  height: 3rem;
+  width: 3rem;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
+.list-bullet-items li::after {
+  content: "";
+  width: 1px;
+  height: 80%;
+  background: #ccc;
+  margin-left: -2.5rem;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
