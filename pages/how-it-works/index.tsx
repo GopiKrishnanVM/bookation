@@ -64,46 +64,45 @@ const IndexPage: NextPage<Props> = ({}) => {
                 <li className="mb-12 md:mb-6">
                   <div className="networklisted__decimal--content max-w-xl">
                     <h3 className="font-inter text-lg font-medium mt-2">
-                      Create a Account
+                      Basic Details
                     </h3>
                     <p className="mt-2 font-inter text-base font-normal text-gray-500">
-                      Submit your interest to get started and a member of our
-                      partnerships team will be in touch. Discuss the benefits
-                      of joining our network of introducers.
+                      A google form will be sent to you. You need to fill in
+                      some basic details about you and your book.
                     </p>
                   </div>
                 </li>
                 <li className="mb-12 md:mb-6">
                   <div className="networklisted__decimal--content max-w-xl">
                     <h3 className="font-inter text-lg font-medium mt-2">
-                      Fill Basic Details
+                      Submit your Book
                     </h3>
                     <p className="mt-2 font-inter text-base font-normal text-gray-500">
-                      We have a straightforward online application process where
-                      we'll ask you about your business so we can verify your
-                      account and get you setup.
+                      Once the google form is submitted, our sales team will
+                      contact you and you need to submit your writings.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="mb-12 md:mb-6">
+                  <div className="networklisted__decimal--content max-w-xl">
+                    <h3 className="font-inter text-lg font-medium mt-2">
+                      Time to edit
+                    </h3>
+                    <p className="mt-2 font-inter text-base font-normal text-gray-500">
+                      Don't know how to edit ! Don't worry we've got the best
+                      editors to do the job for you.
                     </p>
                   </div>
                 </li>
                 <li className="mb-12 md:mb-6">
                   <div className="networklisted__decimal--content max-w-xl">
                     <h3 className="font-inter text-lg font-medium mt-2">
-                      Upload Your Documents
+                      Under Review!
                     </h3>
                     <p className="mt-2 font-inter text-base font-normal text-gray-500">
-                      Once verified and approved, you'll be invited to access
-                      our online platform where you'll be able to start managing
-                      your students. All in one place.
-                    </p>
-                  </div>
-                </li>
-                <li className="mb-12 md:mb-6">
-                  <div className="networklisted__decimal--content max-w-xl">
-                    <h3 className="font-inter text-lg font-medium mt-2">
-                      Under Reviewing Status
-                    </h3>
-                    <p className="mt-2 font-inter text-base font-normal text-gray-500">
-                      You've to upload your book documents for verification.
+                      We've got people to carefully go through your writing and
+                      make sure everything looks fine.
                     </p>
                   </div>
                 </li>
@@ -113,9 +112,20 @@ const IndexPage: NextPage<Props> = ({}) => {
                       Done
                     </h3>
                     <p className="mt-2 font-inter text-base font-normal text-gray-500">
-                      Once your book document verified and approved, Your book
-                      comes to live and It will availabe for purchase in various
-                      platform like Amazon, Flipkart and Notion Press.
+                      Once your book document verified and approved.It will
+                      availabe for purchase in various platform like Amazon,
+                      Flipkart and Notion Press.
+                    </p>
+                  </div>
+                </li>
+                <li className="mb-12 md:mb-6">
+                  <div className="networklisted__decimal--content max-w-xl">
+                    <h3 className="font-inter text-lg font-medium mt-2">
+                      Get Paid
+                    </h3>
+                    <p className="mt-2 font-inter text-base font-normal text-gray-500">
+                      Once the book gets published, you'll get sales
+                      notifications and reports on each 24hrs.
                     </p>
                   </div>
                 </li>

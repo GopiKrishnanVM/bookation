@@ -1,24 +1,4 @@
-// /* This example requires Tailwind CSS v2.0+ */
-// const people = [
-//   {
-//     name: "Michael Foster",
-//     role: "Co-Founder / CTO",
-//     imageUrl:
-//       "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-//   },
-//   {
-//     name: "Michael Foster",
-//     role: "Co-Founder / CTO",
-//     imageUrl:
-//       "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-//   },
-//   {
-//     name: "Michael Foster",
-//     role: "Co-Founder / CTO",
-//     imageUrl:
-//       "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-//   },
-// ];
+
 import { people } from "@/static/about.data";
 
 export default function Example() {
@@ -59,8 +39,8 @@ export default function Example() {
             </ul>
           </div>
           <p className="text-xl text-gray-500">
-            Risus velit condimentum vitae tincidunt tincidunt. Mauris ridiculus
-            fusce amet urna nunc. Ut nisl ornare diam in.
+            We are providing an end-to-end SAAS platform to publish their book
+            at a zero cost and get paid.
           </p>
         </div>
       </div>

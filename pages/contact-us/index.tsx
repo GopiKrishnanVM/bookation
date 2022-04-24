@@ -12,14 +12,14 @@ import {
   PlayIcon,
 } from "@heroicons/react/solid";
 
-const callsToAction = [
+const mailToAction = [
   {
     name: "Email Us",
     href: "https://mail.google.com/mail/u/0/?source=mailto&to=bookation.official@gmail.com&fs=1&tf=cm",
     icon: MailIcon,
   },
-  { name: "Contact Us ", href: "#", icon: PhoneIcon },
 ];
+const callsToAction = [{ name: "Contact Us ", href: "/#", icon: PhoneIcon }];
 
 const supportLinks = [
   {
@@ -46,7 +46,7 @@ export default function Example() {
         <div className="absolute inset-0">
           <img
             className="w-full h-full object-cover"
-            src="https://images.unsplash.com/photo-1525130413817-d45c1d127c42?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=60&&sat=-100"
+            src="/we-love-you.jpg"
             alt=""
           />
           <div
@@ -56,12 +56,11 @@ export default function Example() {
         </div>
         <div className="relative max-w-7xl mx-auto py-24 px-4 sm:py-32 sm:px-6 lg:px-8">
           <h1 className="text-4xl font-extrabold tracking-tight text-white md:text-5xl lg:text-6xl">
-            Support
+            24x7 Support
           </h1>
           <p className="mt-6 max-w-3xl text-xl text-gray-300">
-            Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate
-            id malesuada non. Cras aliquet purus dui laoreet diam sed lacus,
-            fames. Dui, amet, nec sit pulvinar.
+            Facing any issues? Don't worry - We'll provide 24x7 support to
+            resolve your issue.
           </p>
         </div>
       </div>
@@ -101,12 +100,7 @@ export default function Example() {
                 >
                   {salesTeam.map((person) => (
                     <li key={person.name}>
-                      <div className="space-y-4">
-                        {/* <img
-                          className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"
-                          src={person.imageUrl}
-                          alt=""
-                        /> */}
+                      <div className="space-y-4 flex justify-center">
                         <div className="space-y-2">
                           <div className="text-xs font-medium lg:text-sm">
                             <h3>{person.name}</h3>
@@ -116,26 +110,45 @@ export default function Example() {
                       </div>
                     </li>
                   ))}
-                  <div className="bg-gray-50">
-                    <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                      {callsToAction.map((item) => (
-                        <div key={item.name} className="flow-root">
-                          <a
-                            href={item.href}
-                            target="_blank"
-                            className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
-                          >
-                            <item.icon
-                              className="flex-shrink-0 h-6 w-6 text-gray-400"
-                              aria-hidden="true"
-                            />
-                            <span className="ml-3">{item.name}</span>
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
                 </ul>
+              </div>
+              <div>
+                <div className="bg-gray-50 flex justify-center">
+                  <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                    {callsToAction.map((item) => (
+                      <div key={item.name} className="flow-root">
+                        <a
+                          href={`tel:${9873737373}`}
+                          className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
+                        >
+                          <item.icon
+                            className="flex-shrink-0 h-6 w-6 text-gray-400"
+                            aria-hidden="true"
+                          />
+                          <span className="ml-3">{item.name}</span>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                  <div />
+                  <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                    {mailToAction.map((item) => (
+                      <div key={item.name} className="flow-root">
+                        <a
+                          href={item.href}
+                          target="_blank"
+                          className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
+                        >
+                          <item.icon
+                            className="flex-shrink-0 h-6 w-6 text-gray-400"
+                            aria-hidden="true"
+                          />
+                          <span className="ml-3">{item.name}</span>
+                        </a>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </div>
           ))}
