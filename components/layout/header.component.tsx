@@ -131,7 +131,14 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
 
                     {pages.map((page) => (
                       <NextLink href={page.href} key={page.name}>
-                        <a className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">
+                        <a
+                          className={`cursor-pointer ${
+                            router.pathname === page.href
+                              ? "border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium"
+                              : "flex items-center text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+                          }`}
+                        >
+                          {/* <a className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"> */}
                           {page.name}
                         </a>
                       </NextLink>
