@@ -9,7 +9,7 @@ const navigation = {
   social: [
     {
       name: "Instagram",
-      href: "https://www.instagram.com/the.writers.paradise/",
+      href: "https://instagram.com/bookation_?igshid=YmMyMTA2M2Y=",
       icon: (props: any) => (
         <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
           <path
@@ -48,6 +48,7 @@ const FooterComponent: React.FC<Props> = ({}) => {
               key={item.name}
               href={item.href}
               title={item.name}
+              target="_blank"
               className="text-gray-400 hover:text-gray-500"
             >
               <span className="sr-only">{item.name}</span>
@@ -56,8 +57,7 @@ const FooterComponent: React.FC<Props> = ({}) => {
           ))}
         </div>
         <p className="mt-8 text-center font-semibold text-base font-semibold tracking-wide">
-          &copy; {new Date().getFullYear()}'Bookation, Inc. All rights
-          reserved.
+          &copy; {new Date().getFullYear()}'Bookation, Inc. All rights reserved.
         </p>
       </div>
     </footer>

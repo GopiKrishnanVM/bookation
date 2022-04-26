@@ -4,7 +4,10 @@ export const pages = [
   { name: "About us", href: "/about-us", current: false },
   { name: "Contact us", href: "/contact-us/", current: false },
   // { name: "Stores", href: "#" },
-  { name: "Follow @insta", href: "https://www.instagram.com/poetu_bee/" },
+  {
+    name: "Follow @insta",
+    href: "https://instagram.com/bookation_?igshid=YmMyMTA2M2Y=",
+  },
 ];
 
 export const navigation = {
