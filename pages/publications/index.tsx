@@ -1,50 +1,12 @@
-import { classNames } from "@/utility/css-helper";
-import { NextPage } from "next";
+import type { NextPage } from "next";
 import NextLink from "next/link";
 import Image from "next/image";
+import { IPublicationsModel } from "@/models/publications.model";
+import axios from "axios";
 
-type Props = {};
-const products = [
-  {
-    id: 1,
-    name: "Nomad Pouch",
-    href: "nomad-pouch",
-    price: "$50",
-    availability: "White and Black",
-    color: "White and black",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-07-product-01.jpg",
-    imageAlt:
-      "White fabric pouch with white zipper, black zipper pull, and black elastic loop.",
-  },
-  {
-    id: 2,
-    name: "Zip Tote Basket",
-    href: "zip-toe",
-    price: "$140",
-    availability: "Washed Black",
-    color: "White and black",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-07-product-02.jpg",
-    imageAlt:
-      "Front of tote bag with washed black canvas body, black straps, and tan leather handles and accents.",
-  },
-  {
-    id: 3,
-    name: "Medium Stuff Satchel",
-    href: "medium-stuff",
-    price: "$220",
-    availability: "Blue",
-    color: "White and black",
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/category-page-07-product-03.jpg",
-    imageAlt:
-      "Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.",
-  },
-  // More products...
-];
+type Props = { payload: Array<IPublicationsModel> };
 
-const IndexPage: NextPage<Props> = ({}) => {
+const IndexPage: NextPage<Props> = ({ payload }) => {
   return (
     <>
       <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
@@ -53,8 +15,8 @@ const IndexPage: NextPage<Props> = ({}) => {
         </h1>
 
         <div className="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <div key={product.id}>
+          {payload.map((product) => (
+            <div key={product._id}>
               <div className="relative">
                 <div className="relative w-full h-72 rounded-lg overflow-hidden">
                   <Image
@@ -69,7 +31,7 @@ const IndexPage: NextPage<Props> = ({}) => {
                     {product.name}
                   </h3>
                   <p className="mt-1 text-sm text-gray-500">
-                    {product.availability}
+                    {product.author.name}
                   </p>
                 </div>
                 <div className="absolute top-0 inset-x-0 h-72 rounded-lg p-4 flex items-end justify-end overflow-hidden">
@@ -83,7 +45,7 @@ const IndexPage: NextPage<Props> = ({}) => {
                 </div>
               </div>
               <div className="mt-6">
-                <NextLink href={`/publications/${product.href}`}>
+                <NextLink href={`/publications/${product.slug}`}>
                   <a className="relative flex bg-gray-100 border border-transparent rounded-md py-2 px-8 items-center justify-center text-sm font-medium text-gray-900 hover:bg-gray-200">
                     Go to Details
                     <span className="sr-only">, {product.name}</span>
@@ -97,5 +59,15 @@ const IndexPage: NextPage<Props> = ({}) => {
     </>
   );
 };
+
+export async function getServerSideProps() {
+  const response = await axios.get<Array<IPublicationsModel>>(
+    `${process.env.API_BASE_URL}publications/`
+  );
+
+  return {
+    props: { payload: response?.data ?? [] } as Props, // will be passed to the page component as props
+  };
+}
 
 export default IndexPage;

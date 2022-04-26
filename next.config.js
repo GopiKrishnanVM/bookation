@@ -7,7 +7,11 @@ const nextConfig = {
   },
   images: {
     minimumCacheTTL: 60,
-    domains: ["images.unsplash.com", "tailwindui.com"],
+    domains: [
+      "images.unsplash.com",
+      "tailwindui.com",
+      "firebasestorage.googleapis.com",
+    ],
     disableStaticImages: false,
   },
 };

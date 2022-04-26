@@ -1,78 +1,26 @@
-import { NextPage } from "next";
+import type { GetServerSidePropsContext, NextPage } from "next";
 import { useEffect, useState } from "react";
 import NextLink from "next/link";
-import {
-  CheckIcon,
-  QuestionMarkCircleIcon,
-  StarIcon,
-} from "@heroicons/react/solid";
+import { CheckIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid";
 import { RadioGroup } from "@headlessui/react";
 import { ShieldCheckIcon } from "@heroicons/react/outline";
 import { classNames } from "@/utility/css-helper";
-import { useRouter } from "next/router";
-const paperBlack = "Paper black";
-const kindle = "kindle edition";
-type Props = {};
-const product = {
-  name: "Everyday Ruck Snack",
-  href: "#",
-  price: "$220",
-  description:
-    "Don't compromise on snack-carrying capacity with this lightweight and spacious bag. The drawstring top keeps all your favorite chips, crisps, fries, biscuits, crackers, and cookies secure.",
-  imageSrc:
-    "https://tailwindui.com/img/ecommerce-images/product-page-04-featured-product-shot.jpg",
-  imageAlt:
-    "Model wearing light green backpack with black canvas straps and front zipper pouch.",
-  breadcrumbs: [
-    { id: 1, name: "Travel", href: "#" },
-    { id: 2, name: "Bags", href: "#" },
-  ],
-  providers: [
-    {
-      name: "Notion Press",
-      description: "Notion Press publication with both Kindle and Paper black.",
-      links: [
-        {
-          title: paperBlack,
-          link: "https://tailwindui.com/components/ecommerce/components/product-overviews",
-        },
-      ],
-    },
-    {
-      name: "Amazon",
-      description: "Amazon book with both Kindle and Paper black.",
-      links: [
-        {
-          title: paperBlack,
-          link: "https://tailwindui.com/components/ecommerce/components/product-overviews",
-        },
-        {
-          title: kindle,
-          link: "https://github.com/kaarmuhilan/writers-paradise",
-        },
-      ],
-    },
-    {
-      name: "Flipkart",
-      description: "FlipKart book with both Kindle and Paper black.",
-      links: [
-        {
-          title: paperBlack,
-          link: "https://tailwindui.com/components/ecommerce/components/product-overviews",
-        },
-        {
-          title: kindle,
-          link: "https://github.com/kaarmuhilan/writers-paradise",
-        },
-      ],
-    },
-  ],
-};
-const reviews = { average: 4, totalCount: 1624 };
-const PublicationsSlugPage: NextPage<Props> = ({}) => {
-  const [selectedSize, setSelectedSize] = useState(product.providers[0]);
+
+import axios from "axios";
+import { IPublicationsModel } from "@/models/publications.model";
+import { ErrorModel } from "@/models/common/error.model";
+
+type Props = { payload: IPublicationsModel };
+
+// const reviews = { average: 4, totalCount: 1624 };
+const PublicationsSlugPage: NextPage<Props> = ({ payload }) => {
+  const breadcrumbs = [
+    { id: 1, name: "Publications", href: "." },
+    { id: 2, name: payload.slug?.replaceAll("-", " "), href: "#" },
+  ];
+  const [selectedSize, setSelectedSize] = useState(payload.providers[0]);
   const [selectedLink, setSelectedLink] = useState(
-    product.providers[0]?.links[0]?.link
+    payload.providers[0]?.links[0]?.link
   );
 
   useEffect(() => {
@@ -87,16 +35,15 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
           <div className="lg:max-w-lg lg:self-end">
             <nav aria-label="Breadcrumb">
               <ol role="list" className="flex items-center space-x-2">
-                {product.breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
+                {breadcrumbs.map((breadcrumb, breadcrumbIdx) => (
                   <li key={breadcrumb.id}>
-                    <div className="flex items-center text-sm">
-                      <a
-                        href={breadcrumb.href}
-                        className="font-medium text-gray-500 hover:text-gray-900"
-                      >
-                        {breadcrumb.name}
-                      </a>
-                      {breadcrumbIdx !== product.breadcrumbs.length - 1 ? (
+                    <div className="flex items-center text-sm capitalize">
+                      <NextLink href={breadcrumb.href}>
+                        <a className="font-medium text-gray-500 hover:text-gray-900">
+                          {breadcrumb.name}
+                        </a>
+                      </NextLink>
+                      {breadcrumbIdx !== breadcrumbs.length - 1 ? (
                         <svg
                           viewBox="0 0 20 20"
                           xmlns="http://www.w3.org/2000/svg"
@@ -115,7 +62,7 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
 
             <div className="mt-4">
               <h1 className="text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl">
-                {product.name}
+                {payload.name}
               </h1>
             </div>
 
@@ -126,10 +73,10 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
 
               <div className="flex items-center">
                 <p className="text-lg text-gray-900 sm:text-xl">
-                  {product.price}
+                  {payload.price}
                 </p>
 
-                <div className="ml-4 pl-4 border-l border-gray-300">
+                {/* <div className="ml-4 pl-4 border-l border-gray-300">
                   <h2 className="sr-only">Reviews</h2>
                   <div className="flex items-center">
                     <div>
@@ -155,11 +102,11 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
                       {reviews.totalCount} reviews
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
 
               <div className="mt-4 space-y-6">
-                <p className="text-base text-gray-500">{product.description}</p>
+                <p className="text-base text-gray-500">{payload.description}</p>
               </div>
 
               <div className="mt-6 flex items-center">
@@ -178,8 +125,8 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
           <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
             <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
               <img
-                src={product.imageSrc}
-                alt={product.imageAlt}
+                src={payload.imageSrc}
+                alt={payload.imageAlt}
                 className="w-full h-full object-center object-cover"
               />
             </div>
@@ -199,7 +146,7 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
                     Size
                   </RadioGroup.Label>
                   <div className="mt-1 grid grid-cols-1 gap-4 sm:grid-cols-2">
-                    {product.providers.map((size) => (
+                    {payload.providers.map((size) => (
                       <RadioGroup.Option
                         as="div"
                         key={size.name}
@@ -308,7 +255,7 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
                   </a>
                 </NextLink>
               </div>
-              <div className="mt-6 text-center">
+              {/* <div className="mt-6 text-center">
                 <a href="#" className="group inline-flex text-base font-medium">
                   <ShieldCheckIcon
                     className="flex-shrink-0 mr-2 h-6 w-6 text-gray-400 group-hover:text-gray-500"
@@ -318,7 +265,7 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
                     Lifetime Guarantee
                   </span>
                 </a>
-              </div>
+              </div> */}
             </section>
           </div>
         </div>
@@ -327,4 +274,24 @@ const PublicationsSlugPage: NextPage<Props> = ({}) => {
   );
 };
 
+export async function getServerSideProps({ query }: GetServerSidePropsContext) {
+  const response = await axios.get<IPublicationsModel | ErrorModel>(
+    `${process.env.API_BASE_URL}publications/${query?.slug}`
+  );
+  console.log(response.data);
+  console.log(response?.data instanceof ErrorModel);
+
+  if ((response.data as ErrorModel).errorCode) {
+    return {
+      redirect: {
+        destination: "/error",
+        permanent: true,
+      },
+    };
+  }
+
+  return {
+    props: { payload: response?.data } as Props, // will be passed to the page component as props
+  };
+}
 export default PublicationsSlugPage;
