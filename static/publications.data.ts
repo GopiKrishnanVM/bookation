@@ -37,4 +37,84 @@ export const products: Array<IPublicationsModel> = [
       },
     ],
   },
+  {
+    _id: "2",
+    name: "அவளென் பெரும்போதை",
+    slug: "avalen-perumbodhai",
+    price: "₹150",
+    author: { _id: "efgh", name: "Poetu Bee" },
+
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/bookation-cee3a.appspot.com/o/Avalen.jpg?alt=media&token=1f90be58-79ab-49f1-ad4d-af71edfbe805",
+    imageAlt:
+      "White fabric pouch with white zipper, black zipper pull, and black elastic loop.",
+    description:
+      "Intha Puthagthil kamathaiyum kaadhalaiyum enathu mozhiyil mozhinthirukkiuren. Kadhal matrum kamathin paal konda ungal ennangal intha puthagathil azhagaga izhaikkapattirukindrana",
+    providers: [
+      {
+        name: "Amazon",
+        description: "Amazon Paper black.",
+        links: [
+          {
+            title: "Paper back",
+            link: "https://www.amazon.in/dp/1639202781/?tag=003014-21",
+          },
+          {
+            title: "Kindle Edition",
+            link: "https://www.amazon.in/dp/B08MTP67RK/?tag=0010e75-21",
+          },
+        ],
+      },
+      {
+        name: "Notion Press",
+        description: "Notion Press book publications.",
+        links: [
+          {
+            title: "Paper back",
+            link: "https://notionpress.com/read/avalen-perumbodhai",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    _id: "3",
+    name: "தீர்ந்துவிட்டாள்",
+    slug: "Theernthuvittal",
+    price: "₹150",
+    author: { _id: "ijhk", name: "Poetu Bee" },
+
+    imageSrc:
+      "https://firebasestorage.googleapis.com/v0/b/bookation-cee3a.appspot.com/o/Theernthuvittak.jpg?alt=media&token=d3cffa77-f4c5-474d-902c-60116536c6b2",
+    imageAlt:
+      "White fabric pouch with white zipper, black zipper pull, and black elastic loop.",
+    description:
+      "In the first book love, lust, love,I, who wrote it all mixed up as friendly,You can feel , what I would have written in this book through that topic on this book.You may find out in the end. Come and tell me if you come to know. Go on.",
+    providers: [
+      {
+        name: "Amazon",
+        description: "Amazon Paper black.",
+        links: [
+          {
+            title: "Paper back",
+            link: "https://www.amazon.in/dp/1638060002/?tag=003014-21",
+          },
+          {
+            title: "Kindle Edition",
+            link: "https://www.amazon.in/dp/B08T7V7PWG/?tag=003014-21",
+          },
+        ],
+      },
+      {
+        name: "Notion Press",
+        description: "Notion Press book publications.",
+        links: [
+          {
+            title: "Paper back",
+            link: "https://notionpress.com/store/search_book/1369580",
+          },
+        ],
+      },
+    ],
+  },
 ];
