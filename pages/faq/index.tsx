@@ -4,34 +4,22 @@ import { ChevronDownIcon } from "@heroicons/react/outline";
 
 const faqs = [
   {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: "1. How much time it'll take the book to be published?",
+    answer: "It'll take 2days for Kindle and 7days for paperback.",
   },
   {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+    question: "2.Does bookation do edit the books?",
+    answer: "Yes, we have well qualified editors to do the job for you.",
   },
   {
-    question: "What's the best thing about Switzerland?",
+    question: "3. Does bookation verifies the content of the books?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "Yes, we have well qualified readers to validate the writing. Only if the validation goes through, your book will b published.",
   },
   {
-    question: "What's the best thing about Switzerland?",
+    question: "4. How much bookation charges for a book publish?",
     answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-  },
-  {
-    question: "What's the best thing about Switzerland?",
-    answer:
-      "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
+      "No. We're not charging any amount rather we're doing this at a zero cost.",
   },
   // More questions...
 ];
