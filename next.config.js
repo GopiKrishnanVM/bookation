@@ -11,6 +11,7 @@ const nextConfig = {
       "images.unsplash.com",
       "tailwindui.com",
       "firebasestorage.googleapis.com",
+      "cdn.pixabay.com",
     ],
     disableStaticImages: false,
   },

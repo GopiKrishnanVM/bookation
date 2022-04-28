@@ -147,15 +147,20 @@ export default function Example() {
         {/* Decorative image and overlay */}
         <div
           aria-hidden="true"
-          className="absolute inset-0 overflow-hidden banner-video"
+          className="absolute inset-0 overflow-hidden banner-video md:h-screen lg:h-screen"
         >
-          <video autoPlay loop muted>
+          <video
+            autoPlay
+            loop
+            muted
+            poster="https://cdn.pixabay.com/photo/2016/03/27/19/32/book-1283865_960_720.jpg"
+          >
             <source src="Book-Aesthetic mp4" type="video/mp4" />
           </video>
         </div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gray-900 opacity-50"
+          className="absolute inset-0 bg-gray-900 opacity-50 md:h-screen lg:h-screen"
         />
 
         {/* Navigation */}
