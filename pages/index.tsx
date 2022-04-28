@@ -37,9 +37,9 @@ const metrics = [
     id: 3,
     stat: "100%",
     emphasis: "Customer Satisfaction",
-    rest: "laoreet amet lacus nibh integer quis.",
+    rest: "",
   },
-  // {
+  //
   //   id: 4,
   //   stat: "12M+",
   //   emphasis: "Issues resolved",
@@ -132,7 +132,7 @@ const navigation = {
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
-  const router = useRouter()
+  const router = useRouter();
 
   return (
     <div className="bg-white">
@@ -333,6 +333,8 @@ export default function Example() {
             India's first Book publishing workflow automation platform. Checkout
             our latest publications.
           </p>
+
+          <button>hh</button>
         </div>
       </div>
 
@@ -395,12 +397,15 @@ export default function Example() {
                 Our Presence
               </h2>
               <p className="mt-3 text-3xl font-extrabold text-white">
-                Get actionable data that will help grow your business
+                Automates the book publishing process and provides writers to
+                publish books
+                <br />
+                at zero cost!
               </p>
-              <p className="mt-5 text-lg text-gray-300">
+              {/* <p className="mt-5 text-lg text-gray-300">
                 Automates the book publishing process and provides writers to
                 publish books at zero cost!
-              </p>
+              </p> */}
               <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
                 {metrics.map((item) => (
                   <p key={item.id}>
@@ -411,7 +416,7 @@ export default function Example() {
                       <span className="font-medium text-white">
                         {item.emphasis}
                       </span>{" "}
-                      {item.rest}
+                      {/* {item.rest} */}
                     </span>
                   </p>
                 ))}
@@ -420,8 +425,9 @@ export default function Example() {
           </div>
         </div>
       </section>
-      <CustomerReviews />
       <TimeLineComponent />
+      <CustomerReviews />
+
       {/* <ContactForm /> */}
     </div>
   );

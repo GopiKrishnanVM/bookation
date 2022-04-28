@@ -1,4 +1,5 @@
 export const pages = [
+  { name: "Home", href: "/", current: false },
   { name: "Publications", href: "/publications", current: false },
   { name: "How it works?", href: "/how-it-works", current: false },
   { name: "About us", href: "/about-us", current: false },
