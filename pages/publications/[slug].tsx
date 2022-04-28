@@ -123,7 +123,7 @@ const PublicationsSlugPage: NextPage<Props> = ({ payload }) => {
 
           {/* Product image */}
           <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
-            <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
+            <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden border-2 border-gray shadow-md">
               <NextImage
                 blurDataURL={payload.imageSrc}
                 className="w-full h-full object-center object-cover"
@@ -280,8 +280,6 @@ export async function getServerSideProps({ query }: GetServerSidePropsContext) {
   const response = await axios.get<IPublicationsModel | ErrorModel>(
     `${process.env.API_BASE_URL}publications/${query?.slug}`
   );
-  console.log(response.data);
-  console.log(response?.data instanceof ErrorModel);
 
   if ((response.data as ErrorModel).errorCode) {
     return {
