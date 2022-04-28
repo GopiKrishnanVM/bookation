@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import NextLink from "next/link";
 import { CheckIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid";
 import { RadioGroup } from "@headlessui/react";
-import { ShieldCheckIcon } from "@heroicons/react/outline";
+import NextImage from "next/image";
 import { classNames } from "@/utility/css-helper";
 
 import axios from "axios";
@@ -124,11 +124,13 @@ const PublicationsSlugPage: NextPage<Props> = ({ payload }) => {
           {/* Product image */}
           <div className="mt-10 lg:mt-0 lg:col-start-2 lg:row-span-2 lg:self-center">
             <div className="aspect-w-1 aspect-h-1 rounded-lg overflow-hidden">
-              <img
+              <NextImage
+                blurDataURL={payload.imageSrc}
+                className="w-full h-full object-center object-cover"
                 src={payload.imageSrc}
                 alt={payload.imageAlt}
-                className="w-full h-full object-center object-cover"
-              />
+                layout="fill"
+              ></NextImage>
             </div>
           </div>
 

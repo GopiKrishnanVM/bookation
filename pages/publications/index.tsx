@@ -21,8 +21,10 @@ const IndexPage: NextPage<Props> = ({ payload }) => {
                 <div className="relative w-full h-72 rounded-lg overflow-hidden">
                   <Image
                     src={product.imageSrc}
+                    blurDataURL={product.imageSrc}
                     alt={product.imageAlt}
                     layout="fill"
+                    priority={false}
                     className="w-full h-full object-center object-cover"
                   ></Image>
                 </div>
