@@ -33,7 +33,7 @@ const IndexPage: NextPage<Props> = ({}) => {
                 mb-3
               "
                 >
-                  BECOME an Author
+                  Understand Our Process
                 </h4>
                 <h2
                   className="
@@ -48,9 +48,6 @@ const IndexPage: NextPage<Props> = ({}) => {
                   Join our publications and publish your books.
                 </h2>
                 <div className="max-w-xs lg:pr-8 sm:w-full">
-                  <p className="font-inter text-base font-normal text-gray-500 mb-4">
-                    Join our publications & Publish your book without investment
-                  </p>
                   <p className="font-inter text-base font-normal text-gray-500">
                     Our onboarding process is simple and straightforward and our
                     team of experts will guide you every step of the way.
@@ -103,6 +100,17 @@ const IndexPage: NextPage<Props> = ({}) => {
                     <p className="mt-2 font-inter text-base font-normal text-gray-500">
                       We've got people to carefully go through your writing and
                       make sure everything looks fine.
+                    </p>
+                  </div>
+                </li>
+                <li className="mb-12 md:mb-6">
+                  <div className="networklisted__decimal--content max-w-xl">
+                    <h3 className="font-inter text-lg font-medium mt-2">
+                      Confirmation
+                    </h3>
+                    <p className="mt-2 font-inter text-base font-normal text-gray-500">
+                      Once all set, we'll contact you to confirm once everything
+                      looks fine for you!
                     </p>
                   </div>
                 </li>
