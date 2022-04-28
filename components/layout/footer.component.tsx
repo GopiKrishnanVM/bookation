@@ -25,7 +25,7 @@ const navigation = {
 
 const FooterComponent: React.FC<Props> = ({}) => {
   return (
-    <footer className="bg-white relative">
+    <footer className="bg-white relative border-t  ">
       <div className="max-w-7xl mx-auto py-6 px-4 overflow-hidden sm:px-6 lg:px-8">
         <nav
           className="-mx-5 -my-2 flex flex-wrap justify-center"

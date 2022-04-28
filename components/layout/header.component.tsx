@@ -14,7 +14,7 @@ type Props = {
 const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
   const router = useRouter();
   return (
-    <header className="relative">
+    <header className="relative shadow-md">
       <nav aria-label="Top">
         {/* Top navigation */}
 

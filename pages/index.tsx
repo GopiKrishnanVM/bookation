@@ -303,7 +303,7 @@ export default function Example() {
       {/* Hero section */}
       <div className="relative bg-gray-900">
         {/* Decorative image and overlay */}
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden banner-video">
           <video autoPlay loop muted>
             <source src="Book-Aesthetic mp4" type="video/mp4" />
           </video>

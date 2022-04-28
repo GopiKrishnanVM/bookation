@@ -26,14 +26,13 @@
 .list-bullet-items li::after {
   content: "";
   width: 1px;
-  height: 80%;
+  height: 90%;
   background: #ccc;
   margin-left: -2.5rem;
   position: absolute;
   top: 0;
   z-index: 0;
 }
-
 
 /* testimonials */
 .slick-next,
@@ -73,14 +72,13 @@
   height: 12px;
 }
 
-
 /* timeline */
 .timeline {
-  @apply relative max-w-3xl m-auto
+  @apply relative max-w-3xl m-auto;
 }
 
 .timeline::after {
-  content: '';
+  content: "";
   @apply ml-0 absolute bg-transparent top-0 bottom-0 left-1/2 border-l-2 border-dotted border-blue-400;
 }
 
@@ -89,7 +87,7 @@
 }
 
 .timelinebox::after {
-  content: '';
+  content: "";
   @apply absolute w-4 h-4 -right-[9px] top-[46%] rounded-full z-10 bg-gradient-to-r from-cyan-500 to-blue-500;
 }
 
@@ -145,5 +143,12 @@
 
   .right {
     @apply left-0;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .banner-video video {
+    max-width: inherit !important;
+    height: 100% !important;
   }
 }

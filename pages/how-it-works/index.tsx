@@ -10,7 +10,7 @@ type Props = {};
 const IndexPage: NextPage<Props> = ({}) => {
   return (
     <>
-      <section className="networklisted">
+      <section className="networklisted py-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap mx-3">
             <div
