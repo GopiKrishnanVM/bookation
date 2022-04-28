@@ -16,7 +16,7 @@ type Props = { payload: IPublicationsModel };
 const PublicationsSlugPage: NextPage<Props> = ({ payload }) => {
   const breadcrumbs = [
     { id: 1, name: "Publications", href: "." },
-    { id: 2, name: payload.slug?.replaceAll("-", " "), href: "#" },
+    { id: 2, name: payload.slug, href: "#" },
   ];
   const [selectedSize, setSelectedSize] = useState(payload.providers[0]);
   const [selectedLink, setSelectedLink] = useState(

@@ -135,7 +135,7 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
                       <NextLink href={page.href} key={page.name}>
                         <a
                           className={`cursor-pointer ${
-                            router.pathname === page.href
+                            router.pathname.includes(page.href)
                               ? "border-indigo-500 text-gray-900 inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium"
                               : "flex items-center text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
                           }`}

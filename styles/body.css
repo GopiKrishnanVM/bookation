@@ -4,6 +4,7 @@
   list-style-type: none;
   position: relative;
 }
+
 .list-bullet-items li::before {
   counter-increment: section;
   content: counters(section, "");
@@ -31,4 +32,118 @@
   position: absolute;
   top: 0;
   z-index: 0;
+}
+
+
+/* testimonials */
+.slick-next,
+.slick-prev {
+  width: 40px !important;
+  height: 40px !important;
+  border: 3px solid #fff !important;
+  background: #fff !important;
+  @apply drop-shadow-xl rounded-full z-20;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  content: "" !important;
+  display: inline-block;
+  border-right: 2px solid #888889;
+  border-bottom: 2px solid #888889;
+  width: 12px;
+  height: 12px;
+  position: relative;
+}
+
+.slick-prev:before {
+  transform: rotate(-225deg);
+  left: 3px;
+}
+
+.slick-next:before {
+  transform: rotate(-45deg);
+  right: 3px;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: #000 !important;
+  width: 12px;
+  height: 12px;
+}
+
+
+/* timeline */
+.timeline {
+  @apply relative max-w-3xl m-auto
+}
+
+.timeline::after {
+  content: '';
+  @apply ml-0 absolute bg-transparent top-0 bottom-0 left-1/2 border-l-2 border-dotted border-blue-400;
+}
+
+.timelinebox {
+  @apply w-1/2 relative bg-inherit px-10;
+}
+
+.timelinebox::after {
+  content: '';
+  @apply absolute w-4 h-4 -right-[9px] top-[46%] rounded-full z-10 bg-gradient-to-r from-cyan-500 to-blue-500;
+}
+
+.left {
+  left: 0;
+  @apply left-0 pr-24;
+}
+
+.right {
+  @apply left-1/2 pl-24;
+}
+
+.left::before {
+  content: " ";
+  @apply w-28 h-[1px] absolute top-[51%] right-0 z-10 bg-blue-400;
+}
+
+.right::before {
+  content: " ";
+  @apply w-28 h-[1px] absolute top-[51%] left-0 z-10 bg-blue-400;
+}
+
+.right::after {
+  @apply -left-2;
+}
+
+.content {
+  @apply px-5 py-4 bg-white relative rounded-lg w-full;
+}
+
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    @apply left-3;
+  }
+
+  .timelinebox {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+
+  .timelinebox::before {
+    @apply w-6 left-3 top-[18%];
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    @apply top-[20%] left-8;
+  }
+
+  .right {
+    @apply left-0;
+  }
 }

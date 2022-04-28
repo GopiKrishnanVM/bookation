@@ -25,16 +25,35 @@ const supportLinks = [
   {
     name: "Sales Support",
     href: "#",
-    description:
-      "Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.",
+    description: "For any sales related queries and support.",
     icon: PhoneIcon,
+    teamMembers: [
+      {
+        name: "Praveen Kumar",
+        role: "Co-Founder / CTO",
+        contactNumber: "+91 9698770609",
+        contactEmail: "bookation.offical@gmail.com",
+        imageUrl:
+          "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+      },
+    ],
   },
   {
     name: "Technical Support",
     href: "#",
     description:
-      "Varius facilisi mauris sed sit. Non sed et duis dui leo, vulputate id malesuada non. Cras aliquet purus dui laoreet diam sed lacus, fames.",
+      "Facing any technical issues?. Don't worry just give us a call.. we'll try to get that fixed asap.",
     icon: SupportIcon,
+    teamMembers: [
+      {
+        name: "Kaarmuhilan KP",
+        role: "Co-Founder / CTO",
+        contactNumber: "+91 6383172402",
+        contactEmail: "bookation.offical@gmail.com",
+        imageUrl:
+          "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
+      },
+    ],
   },
 ];
 
@@ -98,7 +117,7 @@ export default function Example() {
                   role="list"
                   className="flex flex-wrap justify-center gap-x-8"
                 >
-                  {salesTeam.map((person) => (
+                  {link.teamMembers.map((person) => (
                     <li key={person.name}>
                       <div className="space-y-4 flex justify-center">
                         <div className="space-y-2">
