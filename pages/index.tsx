@@ -284,7 +284,7 @@ export default function Example() {
                           {pages.map((page) => (
                             <NextLink href={page.href} key={page.name}>
                               <a
-                                className={`cursor-pointer ${
+                                className={` cursor-pointer ${
                                   router.pathname.includes(page.href)
                                     ? "border-indigo-500 text-white inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium"
                                     : "flex items-center text-sm font-medium text-white hover:border-gray-300 hover:text-indigo-300"
@@ -330,8 +330,9 @@ export default function Example() {
             Bookation
           </h1>
           <p className="mt-4 text-xl text-white">
-            India's first Book publishing workflow automation platform. Checkout
-            our latest publications.
+            India's first Book publishing workflow automation platform.
+            <br />
+            Checkout our latest publications.
           </p>
 
           <button>hh</button>
