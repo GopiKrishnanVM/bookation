@@ -17,6 +17,8 @@ import { testimonials, perks } from "@/static/home.data";
 import { classNames } from "@/utility/css-helper";
 import CustomerReviews from "@/components/customer-reviews/customer-reviews";
 import TimeLineComponent from "@/components/timeline/time-line-component";
+import { pages } from "@/static/layout.data";
+import { useRouter } from "next/router";
 // import ContactForm from "@/components/forms/contact-form";
 const metrics = [
   {
@@ -130,180 +132,23 @@ const navigation = {
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [open, setOpen] = useState(false);
+  const router = useRouter()
 
   return (
     <div className="bg-white">
       {/* Mobile menu */}
-      <Transition.Root show={mobileMenuOpen} as={Fragment}>
-        <Dialog
-          as="div"
-          className="fixed inset-0 flex z-40 lg:hidden"
-          onClose={setMobileMenuOpen}
-        >
-          <Transition.Child
-            as={Fragment}
-            enter="transition-opacity ease-linear duration-300"
-            enterFrom="opacity-0"
-            enterTo="opacity-100"
-            leave="transition-opacity ease-linear duration-300"
-            leaveFrom="opacity-100"
-            leaveTo="opacity-0"
-          >
-            <Dialog.Overlay className="fixed inset-0 bg-black bg-opacity-25" />
-          </Transition.Child>
-
-          <Transition.Child
-            as={Fragment}
-            enter="transition ease-in-out duration-300 transform"
-            enterFrom="-translate-x-full"
-            enterTo="translate-x-0"
-            leave="transition ease-in-out duration-300 transform"
-            leaveFrom="translate-x-0"
-            leaveTo="-translate-x-full"
-          >
-            <div className="relative max-w-xs w-full bg-white shadow-xl pb-12 flex flex-col overflow-y-auto">
-              <div className="px-4 pt-5 pb-2 flex">
-                <button
-                  type="button"
-                  className="-m-2 p-2 rounded-md inline-flex items-center justify-center text-gray-400"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  <span className="sr-only">Close menu</span>
-                  <XIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-
-              {/* Links */}
-              <Tab.Group as="div" className="mt-2">
-                <div className="border-b border-gray-200">
-                  <Tab.List className="-mb-px flex px-4 space-x-8">
-                    {navigation.categories.map((category) => (
-                      <Tab
-                        key={category.name}
-                        className={({ selected }) =>
-                          classNames(
-                            selected
-                              ? "text-indigo-600 border-indigo-600"
-                              : "text-gray-900 border-transparent",
-                            "flex-1 whitespace-nowrap py-4 px-1 border-b-2 text-base font-medium"
-                          )
-                        }
-                      >
-                        {category.name}
-                      </Tab>
-                    ))}
-                  </Tab.List>
-                </div>
-                <Tab.Panels as={Fragment}>
-                  {navigation.categories.map((category) => (
-                    <Tab.Panel
-                      key={category.name}
-                      className="px-4 py-6 space-y-12"
-                    >
-                      <div className="grid grid-cols-2 gap-x-4 gap-y-10">
-                        {category.featured.map((item) => (
-                          <div key={item.name} className="group relative">
-                            <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
-                              <img
-                                src={item.imageSrc}
-                                alt={item.imageAlt}
-                                className="object-center object-cover"
-                              />
-                            </div>
-                            <a
-                              href={item.href}
-                              className="mt-6 block text-sm font-medium text-gray-900"
-                            >
-                              <span
-                                className="absolute z-10 inset-0"
-                                aria-hidden="true"
-                              />
-                              {item.name}
-                            </a>
-                            <p
-                              aria-hidden="true"
-                              className="mt-1 text-sm text-gray-500"
-                            >
-                              Shop now
-                            </p>
-                          </div>
-                        ))}
-                      </div>
-                    </Tab.Panel>
-                  ))}
-                </Tab.Panels>
-              </Tab.Group>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                {navigation.pages.map((page) => (
-                  <div key={page.name} className="flow-root">
-                    <a
-                      href={page.href}
-                      className="-m-2 p-2 block font-medium text-gray-900"
-                    >
-                      {page.name}
-                    </a>
-                  </div>
-                ))}
-              </div>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Create an account
-                  </a>
-                </div>
-                <div className="flow-root">
-                  <a
-                    href="#"
-                    className="-m-2 p-2 block font-medium text-gray-900"
-                  >
-                    Sign in
-                  </a>
-                </div>
-              </div>
-
-              <div className="border-t border-gray-200 py-6 px-4 space-y-6">
-                {/* Currency selector */}
-                <form>
-                  <div className="inline-block">
-                    <label htmlFor="mobile-currency" className="sr-only">
-                      Currency
-                    </label>
-                    <div className="-ml-2 group relative border-transparent rounded-md focus-within:ring-2 focus-within:ring-white">
-                      <div className="absolute right-0 inset-y-0 flex items-center pointer-events-none">
-                        <svg
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 20 20"
-                          className="w-5 h-5 text-gray-500"
-                        >
-                          <path
-                            stroke="currentColor"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="1.5"
-                            d="M6 8l4 4 4-4"
-                          />
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </Transition.Child>
-        </Dialog>
-      </Transition.Root>
+      <MobileHeaderComponent
+        open={mobileMenuOpen}
+        setOpen={setMobileMenuOpen}
+      />
 
       {/* Hero section */}
       <div className="relative bg-gray-900">
         {/* Decorative image and overlay */}
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden banner-video">
+        <div
+          aria-hidden="true"
+          className="absolute inset-0 overflow-hidden banner-video"
+        >
           <video autoPlay loop muted>
             <source src="Book-Aesthetic mp4" type="video/mp4" />
           </video>
@@ -345,12 +190,19 @@ export default function Example() {
                               {({ open }) => (
                                 <>
                                   <div className="relative flex">
-                                    <Popover.Button className="relative z-10 flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium text-white">
-                                      {category.name}
+                                    <Popover.Button
+                                      className={classNames(
+                                        open
+                                          ? "text-indigo-600"
+                                          : "text-gray-700 hover:text-gray-800",
+                                        "relative flex items-center justify-center transition-colors ease-out duration-200 text-sm font-medium"
+                                      )}
+                                    >
+                                      {/* {category.name} */}
                                       <span
                                         className={classNames(
-                                          open ? "bg-white" : "",
-                                          "absolute -bottom-px inset-x-0 h-0.5 transition ease-out duration-200"
+                                          open ? "bg-indigo-600" : "",
+                                          "absolute z-20 -bottom-px inset-x-0 h-0.5 transition ease-out duration-200"
                                         )}
                                         aria-hidden="true"
                                       />
@@ -366,14 +218,28 @@ export default function Example() {
                                     leaveFrom="opacity-100"
                                     leaveTo="opacity-0"
                                   >
-                                    <Popover.Panel className="absolute top-full inset-x-0 text-sm text-gray-500">
+                                    <Popover.Panel className="absolute z-10 top-full inset-x-0 bg-white text-sm text-gray-500">
                                       {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
                                       <div
                                         className="absolute inset-0 top-1/2 bg-white shadow"
                                         aria-hidden="true"
                                       />
+                                      {/* Fake border when menu is open */}
+                                      <div
+                                        className="absolute inset-0 top-0 h-px max-w-7xl mx-auto px-8"
+                                        aria-hidden="true"
+                                      >
+                                        <div
+                                          className={classNames(
+                                            open
+                                              ? "bg-gray-200"
+                                              : "bg-transparent",
+                                            "w-full h-px transition-colors ease-out duration-200"
+                                          )}
+                                        />
+                                      </div>
 
-                                      <div className="relative bg-white">
+                                      <div className="relative">
                                         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                                           <div className="grid grid-cols-4 gap-y-10 gap-x-8 py-16">
                                             {category.featured.map((item) => (
@@ -382,22 +248,21 @@ export default function Example() {
                                                 className="group relative"
                                               >
                                                 <div className="aspect-w-1 aspect-h-1 rounded-md bg-gray-100 overflow-hidden group-hover:opacity-75">
-                                                  <img
+                                                  <Image
                                                     src={item.imageSrc}
                                                     alt={item.imageAlt}
                                                     className="object-center object-cover"
-                                                  />
+                                                  ></Image>
                                                 </div>
-                                                <a
-                                                  href={item.href}
-                                                  className="mt-4 block font-medium text-gray-900"
-                                                >
-                                                  <span
-                                                    className="absolute z-10 inset-0"
-                                                    aria-hidden="true"
-                                                  />
-                                                  {item.name}
-                                                </a>
+                                                <NextLink href={item.href}>
+                                                  <a className="mt-4 block font-medium text-gray-900">
+                                                    <span
+                                                      className="absolute z-10 inset-0"
+                                                      aria-hidden="true"
+                                                    />
+                                                    {item.name}
+                                                  </a>
+                                                </NextLink>
                                                 <p
                                                   aria-hidden="true"
                                                   className="mt-1"
@@ -416,18 +281,43 @@ export default function Example() {
                             </Popover>
                           ))}
 
-                          {navigation.pages.map((page) => (
-                            <a
-                              key={page.name}
-                              href={page.href}
-                              className="flex items-center text-sm font-medium text-white"
-                            >
-                              {page.name}
-                            </a>
+                          {pages.map((page) => (
+                            <NextLink href={page.href} key={page.name}>
+                              <a
+                                className={`cursor-pointer ${
+                                  router.pathname.includes(page.href)
+                                    ? "border-indigo-500 text-white inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium"
+                                    : "flex items-center text-sm font-medium text-white hover:border-gray-300 hover:text-indigo-300"
+                                }`}
+                              >
+                                {/* <a className="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800"> */}
+                                {page.name}
+                              </a>
+                            </NextLink>
                           ))}
                         </div>
                       </Popover.Group>
                     </div>
+                    <div className="flex-1 flex items-center lg:hidden">
+                      <button
+                        type="button"
+                        className="-ml-2 p-2 text-white"
+                        onClick={() => setMobileMenuOpen(true)}
+                      >
+                        <span className="sr-only">Open menu</span>
+                        <MenuIcon className="h-6 w-6" aria-hidden="true" />
+                      </button>
+
+                      {/* Search */}
+                    </div>
+                    <a href="#" className="lg:hidden">
+                      <span className="sr-only">Workflow</span>
+                      <img
+                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
+                        alt=""
+                        className="h-8 w-auto"
+                      />
+                    </a>
                   </div>
                 </div>
               </div>
