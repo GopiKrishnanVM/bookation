@@ -1,15 +1,17 @@
-import { classNames } from "@/utility/css-helper";
-import { NextPage } from "next";
-import { CheckIcon } from "@heroicons/react/solid";
-import NextLink from "next/link";
-import Image from "next/image";
-import { steps } from "@/static/how-works.data";
+import type { NextPage } from "next";
+import Head from "next/head";
 
 type Props = {};
 
 const IndexPage: NextPage<Props> = ({}) => {
   return (
     <>
+      <Head>
+        <title>How it works | Bookation</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="all" />
+        <meta name="googlebot" content="index,follow" />
+      </Head>
       <section className="networklisted py-20">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-wrap mx-3">
