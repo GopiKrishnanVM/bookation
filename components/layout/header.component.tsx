@@ -1,7 +1,7 @@
 import { navigation, pages } from "@/static/layout.data";
 import { classNames } from "@/utility/css-helper";
 import { Popover, Transition } from "@headlessui/react";
-import { MenuIcon, SearchIcon } from "@heroicons/react/outline";
+import { MenuIcon } from "@heroicons/react/outline";
 import { Fragment } from "react";
 import { useRouter } from "next/router";
 import NextLink from "next/link";
@@ -158,14 +158,6 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
                   <span className="sr-only">Open menu</span>
                   <MenuIcon className="h-6 w-6" aria-hidden="true" />
                 </button>
-
-                {/* Search */}
-                <NextLink href="#">
-                  <a className="ml-2 p-2 text-gray-400 hover:text-gray-500">
-                    <span className="sr-only">Search</span>
-                    <SearchIcon className="w-6 h-6" aria-hidden="true" />
-                  </a>
-                </NextLink>
               </div>
             </div>
           </div>
