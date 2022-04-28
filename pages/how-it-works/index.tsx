@@ -35,7 +35,7 @@ const IndexPage: NextPage<Props> = ({}) => {
                 mb-3
               "
                 >
-                  Understand Our Process
+                  Understand Our Process!
                 </h4>
                 <h2
                   className="

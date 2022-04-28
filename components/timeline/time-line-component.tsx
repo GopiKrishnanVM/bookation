@@ -7,9 +7,9 @@ const TimelineIndexComponent: React.FC<Props> = ({}) => {
         Mission to unlock
       </h2>
       <p className="text-xl  text-center tracking-tight text-gray-900 pb-10">
-        We are on a mission to organize and digitize this huge unorganized and
-        manual salon & spa industry. Help our partners enjoy an end-to-end SAAS
-        platform to create long lasting, loyal clients & display 5X performance!
+        We are on a mission to digitize the book publishing process and help
+        budding writers to enjoy an end-to-end SAAS platform to publish their
+        book at a zero cost and get paid.
       </p>
       <h2 className="text-5xl font-extrabold text-center tracking-tight text-gray-900 pb-10">
         Milestones so for
@@ -17,34 +17,29 @@ const TimelineIndexComponent: React.FC<Props> = ({}) => {
       <div className="timeline">
         <div className="timelinebox left">
           <div className="content">
-            <h2 className="text-xl font-semibold text-gray-800">
-              January 2020
-            </h2>
+            <h2 className="text-xl font-semibold text-gray-800">Mar 2022</h2>
             <p className="font-normal text-sm break-all text-gray-600">
-              Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-              admodum perfecto mnesarchum
+              Idea pitch & Brainstorming
             </p>
           </div>
         </div>
         <div className="timelinebox right">
           <div className="content">
-            <h2 className="text-xl font-semibold text-gray-800">May 2021</h2>
+            <h2 className="text-xl font-semibold text-gray-800">Apr 2022 </h2>
             <p className="font-normal text-sm break-all text-gray-600">
-              Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-              admodum perfecto mnesarchum
+              Working on the initial product launch plan and execution
             </p>
           </div>
         </div>
         <div className="timelinebox left">
           <div className="content">
-            <h2 className="text-xl font-semibold text-gray-800">March 2022</h2>
+            <h2 className="text-xl font-semibold text-gray-800">May 2022</h2>
             <p className="font-normal text-sm break-all text-gray-600">
-              Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec
-              admodum perfecto mnesarchum
+              Launched our first version of our #Bookation
             </p>
           </div>
         </div>
-        <div className="timelinebox right">
+        {/* <div className="timelinebox right">
           <div className="content">
             <h2 className="text-xl font-semibold text-gray-800">April 2022</h2>
             <p className="font-normal text-sm break-all text-gray-600">
@@ -61,7 +56,7 @@ const TimelineIndexComponent: React.FC<Props> = ({}) => {
               admodum perfecto mnesarchum
             </p>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
