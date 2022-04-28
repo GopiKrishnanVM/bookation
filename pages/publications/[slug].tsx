@@ -5,7 +5,7 @@ import { CheckIcon, QuestionMarkCircleIcon } from "@heroicons/react/solid";
 import { RadioGroup } from "@headlessui/react";
 import NextImage from "next/image";
 import { classNames } from "@/utility/css-helper";
-
+import Head from "next/head";
 import axios from "axios";
 import { IPublicationsModel } from "@/models/publications.model";
 import { ErrorModel } from "@/models/common/error.model";
@@ -29,6 +29,12 @@ const PublicationsSlugPage: NextPage<Props> = ({ payload }) => {
 
   return (
     <>
+      <Head>
+        <title>{payload.name} | Bookation</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="all" />
+        <meta name="googlebot" content="index,follow" />
+      </Head>
       <div className="bg-white">
         <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 lg:grid lg:grid-cols-2 lg:gap-x-8">
           {/* Product details */}

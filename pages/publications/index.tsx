@@ -3,12 +3,19 @@ import NextLink from "next/link";
 import Image from "next/image";
 import { IPublicationsModel } from "@/models/publications.model";
 import axios from "axios";
+import Head from "next/head";
 
 type Props = { payload: Array<IPublicationsModel> };
 
 const IndexPage: NextPage<Props> = ({ payload }) => {
   return (
     <>
+      <Head>
+        <title>Published books by Bookation</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="robots" content="all" />
+        <meta name="googlebot" content="index,follow" />
+      </Head>
       <main className="max-w-7xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:px-8">
         <h1 className="text-3xl font-extrabold tracking-tight text-gray-900">
           Published Books
