@@ -133,7 +133,10 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
                     ))}
 
                     {pages.map((page) => (
-                      <NextLink href={page.href} key={page.name}>
+                      <NextLink
+                        href={page.href == "#" ? "/" : page.href}
+                        key={page.name}
+                      >
                         <a
                           className={`cursor-pointer ${
                             router.pathname.includes(page.href)

@@ -286,11 +286,11 @@ export default function Example() {
                             </Popover>
                           ))}
 
-                          {pages.map((page) => (
+                          {pages.map((page, i) => (
                             <NextLink href={page.href} key={page.name}>
                               <a
-                                className={` cursor-pointer ${
-                                  router.pathname.includes(page.href)
+                                className={`cursor-pointer ${
+                                  i == 0
                                     ? "border-indigo-500 text-white inline-flex items-center px-1 pt-1 border-b-4 text-sm font-medium"
                                     : "flex items-center text-sm font-medium text-white hover:border-gray-300 hover:text-indigo-300"
                                 }`}
