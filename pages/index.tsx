@@ -339,8 +339,6 @@ export default function Example() {
             <br />
             Checkout our latest publications.
           </p>
-
-          <button>hh</button>
         </div>
       </div>
 
