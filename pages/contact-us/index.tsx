@@ -21,8 +21,8 @@ const supportLinks = [
     icon: PhoneIcon,
     teamMembers: [
       {
-        name: "Praveen Kumar",
-        role: "Co-Founder / CTO",
+        name: "Praveenkumar",
+        role: "Co-Founder",
         contactNumber: "+91 9698770609",
         contactEmail: "bookation.offical@gmail.com",
         imageUrl:
@@ -39,7 +39,7 @@ const supportLinks = [
     teamMembers: [
       {
         name: "Kaarmuhilan KP",
-        role: "Co-Founder / CTO",
+        role: "Co-Founder",
         contactNumber: "+91 6383172402",
         contactEmail: "bookation.offical@gmail.com",
         imageUrl:
