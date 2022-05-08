@@ -178,7 +178,6 @@ export default function Example() {
                     <div className="hidden lg:flex-1 lg:flex lg:items-center">
                       <a href="#">
                         <span className="sr-only">Workflow</span>
-
                         <img
                           className="h-16 w-auto"
                           src="/B-logo-circle.png"
