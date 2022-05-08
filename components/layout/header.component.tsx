@@ -26,8 +26,8 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
                 <NextLink href="/">
                   <a>
                     <img
-                      className="h-8 w-auto sm:h-10"
-                      src="/alt-logo.jpg"
+                      className="h-16 w-auto sm:h-16"
+                      src="/bookation-logo.png"
                       alt=""
                     />
                   </a>
@@ -170,7 +170,7 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
                   <a>
                     <img
                       className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
+                      src="/bookation-logo.png"
                       alt=""
                     />
                   </a>
