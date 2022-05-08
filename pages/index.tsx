@@ -179,8 +179,8 @@ export default function Example() {
                       <a href="#">
                         <span className="sr-only">Workflow</span>
                         <img
-                          className="h-8 w-auto"
-                          src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
+                          className="h-16 w-auto"
+                          src="/B-logo-circle.png"
                           alt=""
                         />
                       </a>
@@ -318,9 +318,9 @@ export default function Example() {
                     <a href="#" className="lg:hidden">
                       <span className="sr-only">Workflow</span>
                       <img
-                        src="https://tailwindui.com/img/logos/workflow-mark.svg?color=white"
+                        src="/B-logo-circle.png"
                         alt=""
-                        className="h-8 w-auto"
+                        className="h-16 w-auto"
                       />
                     </a>
                   </div>
