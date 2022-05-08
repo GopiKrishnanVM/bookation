@@ -41,7 +41,7 @@ export const products: Array<IPublicationsModel> = [
     _id: "2",
     name: "அவளென் பெரும்போதை",
     slug: "avalen-perumbodhai",
-    price: "₹150",
+    price: "₹143",
     author: { _id: "efgh", name: "Poetu Bee" },
 
     imageSrc:
@@ -81,7 +81,7 @@ export const products: Array<IPublicationsModel> = [
     _id: "3",
     name: "தீர்ந்துவிட்டாள்",
     slug: "Theernthuvittal",
-    price: "₹150",
+    price: "₹179",
     author: { _id: "ijhk", name: "Poetu Bee" },
 
     imageSrc:
