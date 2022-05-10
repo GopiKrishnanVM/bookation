@@ -7,7 +7,7 @@ export const people = [
       "https://firebasestorage.googleapis.com/v0/b/bookation-cee3a.appspot.com/o/Muhil.jpg?alt=media&token=94bb80d0-ce2e-4acf-9cc2-18d0f02581e8",
   },
   {
-    name: "Praveenkumar P",
+    name: "Praveenkumar B",
     role: "Co-Founder",
     imageUrl:
       "https://firebasestorage.googleapis.com/v0/b/bookation-cee3a.appspot.com/o/Praveen-Kumar.jpg?alt=media&token=fc5ee861-d1ba-4bfc-aa98-089caff2384d",

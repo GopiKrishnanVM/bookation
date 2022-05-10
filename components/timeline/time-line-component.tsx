@@ -27,7 +27,7 @@ const TimelineIndexComponent: React.FC<Props> = ({}) => {
           <div className="content">
             <h2 className="text-xl font-semibold text-gray-800">Apr 2022 </h2>
             <p className="font-normal text-sm break-all text-gray-600">
-              Working on the initial product launch plan and execution
+              Working on the initial product <br></br>launch plan and execution
             </p>
           </div>
         </div>

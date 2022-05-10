@@ -344,7 +344,7 @@ export default function Example() {
 
       <section className="border-y border-gray-300 relative max-w-7xl mx-auto py-24 px-4 sm:px-6 lg:py-20 lg:px-8">
         <h2 className="text-5xl font-extrabold text-center tracking-tight text-gray-900 pb-10">
-          Our List of Activity
+          Discover the features of Bookation
         </h2>
         <div className="max-w-7xl mx-auto py-6 px-4">
           <div className="grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 lg:gap-8">

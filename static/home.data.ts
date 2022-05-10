@@ -57,32 +57,32 @@ export const trendingProducts = [
 ];
 export const perks = [
   {
-    name: "Publish E-Book",
+    name: "Publish everywhere!",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-calendar-light.svg",
     description:
-      "Get your e-book published with the most trusted online book stores like Amazon, Notion Press..etc",
+      "Are you ready to publish a book, but not sure where to start? We #Bookation helps you to publish a book with zero investment.",
   },
   {
-    name: "Publish Paperback",
+    name: "High skilled Editors",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-returns-light.svg",
     description:
-      "Are you ready to publish a book, but not sure where to start? Learn how to publish a book with zero investment.",
+      "Never edited a book before? Fear not - We've a set of highly qualified editors to do the job for you!",
   },
   {
-    name: "Magic of Editing",
+    name: "Get paid!",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-planet-light.svg",
     description:
-      "Never edited a book before? Fear not - We've a set of highly qualified editors for do the job for you!",
+      "Publishing done! And next? We provide the industry's highest author royalty. Sales notifications and reports within 24hrs.",
   },
   {
-    name: "Get Paid",
+    name: "24x7 support",
     imageUrl:
       "https://tailwindui.com/img/ecommerce/icons/icon-gift-card-light.svg",
     description:
-      "Publishing done! And next? We provide the industry's highest author royalty. Sales notifications and reports within 34hrs.",
+      "Facing any issues? Don't worry - We'll provide 24x7 support to resolve your issue.",
   },
 ];
 
