@@ -1,10 +1,7 @@
-import { Dialog, Tab, Transition } from "@headlessui/react";
+import { Dialog, Transition } from "@headlessui/react";
 import { XIcon } from "@heroicons/react/outline";
-import { Fragment, useEffect } from "react";
-import { classNames } from "@/utility/css-helper";
+import { Fragment } from "react";
 import { pages } from "@/static/layout.data";
-import NextLink from "next/link";
-import Image from "next/image";
 import { useRouter } from "next/router";
 
 type Props = {
