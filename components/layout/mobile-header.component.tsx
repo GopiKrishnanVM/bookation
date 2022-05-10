@@ -13,13 +13,14 @@ type Props = {
 };
 
 const MobileHeaderComponent: React.FC<Props> = ({ open, setOpen }) => {
-  const { pathname } = useRouter();
-  useEffect(() => {
-    if (open == true) {
-      setOpen(false);
+  const { pathname, push } = useRouter();
+
+  const handleLinkClick = (link: string): void => {
+    if (link != pathname) {
+      push(link);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname]);
+    setOpen(false);
+  };
   return (
     <Transition.Root show={open} as={Fragment}>
       <Dialog
@@ -63,11 +64,11 @@ const MobileHeaderComponent: React.FC<Props> = ({ open, setOpen }) => {
             <div className="border-t border-gray-200 py-6 px-4 space-y-6">
               {pages.map((page) => (
                 <div key={page.name} className="flow-root">
-                  <NextLink href={page.href}>
-                    <a className="-m-2 p-2 block font-medium text-gray-900">
+                  <span onClick={() => handleLinkClick(page.href)}>
+                    <a className="-m-2 p-2 block font-medium text-gray-900 cursor-pointer">
                       {page.name}
                     </a>
-                  </NextLink>
+                  </span>
                 </div>
               ))}
             </div>
