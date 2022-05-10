@@ -25,10 +25,14 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
               <div className="hidden lg:flex-1 lg:flex lg:items-center">
                 <NextLink href="/">
                   <a>
-                    <img
+                    <Image
                       className="h-16 w-auto sm:h-16"
                       src="/bookation-logo.png"
-                      alt=""
+                      blurDataURL="/bookation-logo.png"
+                      alt="Bookation Logo"
+                      layout="fixed"
+                      height={72}
+                      width={72}
                     />
                   </a>
                 </NextLink>
@@ -165,13 +169,16 @@ const HeaderComponent: React.FC<Props> = ({ setOpen }) => {
               </div>
               {/* Logo (lg-) */}
               <div className="md:hidden lg:hidden">
-                {" "}
                 <NextLink href="/">
                   <a>
-                    <img
-                      className="h-8 w-auto sm:h-10"
+                    <Image
+                      className="h-16 w-auto sm:h-16"
                       src="/bookation-logo.png"
-                      alt=""
+                      blurDataURL="/bookation-logo.png"
+                      alt="Bookation Logo"
+                      layout="fixed"
+                      height={64}
+                      width={64}
                     />
                   </a>
                 </NextLink>
