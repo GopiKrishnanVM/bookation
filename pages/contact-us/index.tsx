@@ -1,55 +1,15 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { PhoneIcon, SupportIcon } from "@heroicons/react/outline";
+import { PhoneIcon } from "@heroicons/react/outline";
 import { MailIcon } from "@heroicons/react/solid";
 import Head from "next/head";
 import NextLink from "next/link";
 import NextImage from "next/image";
-const mailToAction = [
-  {
-    name: "Email Us",
-    href: "https://mail.google.com/mail/u/0/?source=mailto&to=bookation.official@gmail.com&fs=1&tf=cm",
-    icon: MailIcon,
-  },
-];
-const callsToAction = [{ name: "Contact Us ", href: "/#", icon: PhoneIcon }];
+import type { NextPage } from "next";
+import { supportLinks } from "@/static/contact-us.data";
 
-const supportLinks = [
-  {
-    name: "Sales Support",
-    href: "#",
-    description: "For any sales related queries and support.",
-    icon: PhoneIcon,
-    teamMembers: [
-      {
-        name: "Praveenkumar",
-        role: "Co-Founder",
-        contactNumber: "+91 9698770609",
-        contactEmail: "bookation.offical@gmail.com",
-        imageUrl:
-          "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-      },
-    ],
-  },
-  {
-    name: "Technical Support",
-    href: "#",
-    description:
-      "Facing any technical issues?. Don't worry just give us a call.. we'll try to get that fixed asap.",
-    icon: SupportIcon,
-    teamMembers: [
-      {
-        name: "Kaarmuhilan KP",
-        role: "Co-Founder",
-        contactNumber: "+91 6383172402",
-        contactEmail: "bookation.offical@gmail.com",
-        imageUrl:
-          "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=8&w=1024&h=1024&q=80",
-      },
-    ],
-  },
-];
+type Props = {};
 
-export default function Example() {
+const IndexPage: NextPage<Props> = ({}) => {
   return (
     <>
       <Head>
@@ -133,45 +93,57 @@ export default function Example() {
                     ))}
                   </ul>
                 </div>
-                <div>
-                  <div className="bg-gray-50 flex justify-center">
-                    <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                      {callsToAction.map((item) => (
-                        <div key={item.name} className="flow-root">
-                          <a
-                            href={`tel:${9873737373}`}
-                            className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
-                          >
-                            <item.icon
-                              className="flex-shrink-0 h-6 w-6 text-gray-400"
-                              aria-hidden="true"
-                            />
-                            <span className="ml-3">{item.name}</span>
-                          </a>
-                        </div>
-                      ))}
-                    </div>
-                    <div />
-                    <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
-                      {mailToAction.map((item) => (
-                        <div key={item.name} className="flow-root">
-                          <NextLink href={item.href}>
+                {link.teamMembers.map((member, index) => (
+                  <div key={`member-contact-us-${index}`}>
+                    <div className="bg-gray-50 flex justify-center">
+                      {member.contactNumber ? (
+                        <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                          <div className="flow-root">
                             <a
-                              target="_blank"
+                              href={`tel:${member.contactNumber}`}
                               className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
                             >
-                              <item.icon
+                              <PhoneIcon
                                 className="flex-shrink-0 h-6 w-6 text-gray-400"
                                 aria-hidden="true"
                               />
-                              <span className="ml-3">{item.name}</span>
+                              <span className="ml-3">
+                                {"Contact us" as const}
+                              </span>
                             </a>
-                          </NextLink>
+                          </div>
                         </div>
-                      ))}
+                      ) : (
+                        <></>
+                      )}
+                      <div />
+                      {member.contactEmail ? (
+                        <div className="max-w-7xl mx-auto space-y-6 px-4 py-5 sm:flex sm:space-y-0 sm:space-x-10 sm:px-6 lg:px-8">
+                          <div className="flow-root">
+                            <NextLink
+                              href={`https://mail.google.com/mail/u/0/?source=mailto&to=${member.contactEmail}&fs=1&tf=cm`}
+                            >
+                              <a
+                                target="_blank"
+                                className="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition ease-in-out duration-150"
+                              >
+                                <MailIcon
+                                  className="flex-shrink-0 h-6 w-6 text-gray-400"
+                                  aria-hidden="true"
+                                />
+                                <span className="ml-3">
+                                  {"Email us" as const}
+                                </span>
+                              </a>
+                            </NextLink>
+                          </div>
+                        </div>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
-                </div>
+                ))}
               </div>
             ))}
           </div>
@@ -179,4 +151,6 @@ export default function Example() {
       </div>
     </>
   );
-}
+};
+
+export default IndexPage;

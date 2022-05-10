@@ -31,13 +31,13 @@ export default function Example() {
                   <li key={person.name}>
                     <div className="space-y-4">
                       <NextImage
-                        className="mx-auto h-20 w-20 rounded-full lg:w-24 lg:h-24"
+                        className="mx-auto h-20 w-20 rounded-full lg:w-28 lg:h-28"
                         src={person.imageUrl}
                         blurDataURL={person.imageUrl}
                         alt={person.name}
-                        layout="responsive"
-                        height={80}
-                        width={80}
+                        layout="fixed"
+                        height={96}
+                        width={96}
                       />
                       <div className="space-y-2">
                         <div className="text-xs font-medium lg:text-sm">
